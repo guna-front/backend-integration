@@ -1,0 +1,55 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Healthy Fruits Guide</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<nav>
+  <a href="{% url 'home' %}">Home</a>
+  <a href="{% url 'nutrients' %}">Nutrients</a>
+  <a href="{% url 'contact' %}">Contact</a>
+</nav>
+
+<header>
+<h1 id="edit">Welcome to Healthy Fruits</h1>
+<button onclick="changeTitle()">click for healthy tips</button>
+<p class="high">Fresh fruits are full of vitamins</p>
+<p class="high1">They help children grow</p> 
+</header>
+
+<main>
+
+<div>
+<p>This is my first <span class="html">HTML</span> webpage project.</p>
+
+<p>
+Fruits are important for daily nutrition.  
+They provide vitamins, minerals, and natural energy.
+</p>
+
+<p>
+To learn more about the nutrients inside fruits,
+visit the Nutrients page.
+</p>
+</div>
+
+<div class="image-content">
+
+<img src="{% static 'images/strawberries.jpg' %}" alt="strawberries" width="300px">
+
+<span class="badge">SALE</span>
+
+</div>
+
+</main>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+
