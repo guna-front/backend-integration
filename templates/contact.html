@@ -18,41 +18,46 @@
 
 <div class="container mt-5 mb-5 pb-5 bg-warning bg-opacity-50 p-4 rounded shadow-sm">
 
-<nav class="d-flex justify-content-end mb-4">
+<nav class="d-flex justify-content-end gap-3 p-3 flex-wrap">
 
-<a href="{% url 'home' %}" class="me-3 link-success">Home</a>
-<a href="{% url 'nutrients' %}" class="me-3 link-danger" >Nutrients</a>
-<a href="{% url 'contact' %}" class="me-3 link-primary">Contact</a>
+<a href="{% url 'home' %}" class="link-success">Home</a>
+<a href="{% url 'nutrients' %}" class="link-danger" >Nutrients</a>
+<a href="{% url 'contact' %}" class="link-primary">Contact</a>
 </nav>
-
-<h2 class="text-center mb-4">Contact Us</h2>
 
 <form id="contactForm" class="mb-5" method="POST">
     {% csrf_token %}
 
-<div class="mb-3">
-<label class="form-label">Name</label>
-<input type="text" id="name" name="name" class="form-control" placeholder="Enter your name">
-</div>
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" value="{{ name|default:'' }}">
+        {% if errors.name %}
+        <div class="text-danger mt-1">{{ errors.name }}</div>
+        {% endif %}
+    </div>
 
-<div class="mb-3">
-<label class="form-label">Email</label>
-<input type="email" id="email" name="email" class="form-control" placeholder="Enter your email">
-</div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" value="{{ email|default:'' }}">
+        {% if errors.email %}
+        <div class="text-danger mt-1">{{ errors.email }}</div>
+        {% endif %}
+    </div>
 
-<div class="mb-3">
-<label class="form-label">Message</label>
-<textarea id="message" name="message" class="form-control" rows="4"></textarea>
-</div>
+    <div class="mb-3">
+        <label class="form-label">Message</label>
+        <textarea id="message" name="message" class="form-control" rows="4">{{ message|default:'' }}</textarea>
+        {% if errors.message %}
+        <div class="text-danger mt-1">{{ errors.message }}</div>
+        {% endif %}
+    </div>
 
-<button type="submit" class="btn btn-primary">Send</button>
-
+    <button type="submit" class="btn btn-primary">Send</button>
 </form>
 
-<div id="successMsg" class="mt-3"></div>
-
-
-</div>
-
+{% if success %}
+<div id="successMsg" class="alert alert-success">{{ success }}</div>
+{% endif %}  
 </body>
 
+</html>

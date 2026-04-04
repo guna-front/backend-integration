@@ -1,9 +1,10 @@
 
 body {
-  background-color: rgb(190, 224, 247);
+  background-color: rgb(197, 241, 244);
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  padding-top: 30px;
+  margin-top: 20px;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 
@@ -36,7 +37,7 @@ header {
 }
 
 .high1 {
-  color: blue;
+  color: rgb(35, 79, 240);
   font-style: italic;
 }
 
@@ -51,8 +52,10 @@ header h2 {
 nav {
   display: flex;
   justify-content: flex-end;
+  gap: 20px;
   font-size: larger;
-  margin-bottom: 20px;
+  padding: 10px 20px;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -61,6 +64,7 @@ nav a {
   margin: 0 10px;
   display: inline-block;
   transition: transform 0.3s;
+  padding: 10px;
 }
 
 nav a:hover {
@@ -72,7 +76,12 @@ nav a:hover {
 .content-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 20px;
+  padding: 10px;
+}
+.table-box {
+  overflow-x: auto;
+  padding: 0 20px;
 }
 
 .image-content {
@@ -117,8 +126,7 @@ video:hover {
 table {
   border-collapse: collapse;
   width: 100%;
-  margin-top: 20px;
-  border-radius: 8px;
+  max-width: 100%;
   overflow-x: auto;
 }
 
@@ -147,7 +155,7 @@ li:hover {
 }
 
 .html {
-  color: rgb(18, 10, 251);
+  color: rgb(50, 10, 251);
   }
 
 footer {
@@ -155,6 +163,7 @@ footer {
   margin-top: 40px;
   padding: 10px;
   background-color: rgb(200, 200, 250);
+  
 
 }
 
