@@ -1,6 +1,6 @@
-import requests
-
-url = "https://gunadev93.pythonanywhere.com/contact/"
-data = {'name': 'guna', 'email': 'cha@example.com', 'message': 'Hello!'}
-r = requests.post(url, data=data)
-print(r.status_code, r.text)
+asgiref==3.11.0
+Django==6.0.1
+pillow==12.1.0
+sqlparse==0.5.5
+tzdata==2025.3
+requests==2.32.0
