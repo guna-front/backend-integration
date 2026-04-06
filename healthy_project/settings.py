@@ -1,4 +1,4 @@
-print("SETTINGS FILE LOADED")
+print("FORCE NEW BUILD 123")
 
 from pathlib import Path
 import os
